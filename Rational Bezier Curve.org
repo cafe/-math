@@ -23,7 +23,7 @@ where B_{i,n}(t) is a Bernstein polynomial and t in [0,1]. Bézier splines are i
 A "rational" Bézier curve is defined by (in /LaTeX/)
 
 #+BEGIN_SRC latex
-C(t)=\frac{\sum_{i=0}^n B_{i,p}(t) w_i P_i}{\sum_{i=0}^n B_{i,p}(t) w_i}
+C(t)=\frac{\sum_{i=0}^n B_{i,n}(t) w_i P_i}{\sum_{i=0}^n B_{i,n}(t) w_i}
 #+END_SRC
 
 i.e., 
@@ -31,11 +31,33 @@ i.e.,
 #+BEGIN_EXAMPLE
         __ n                  
        \         B   (t) w  P 
-       /__ i = 0  i,p     i  i
+       /__ i = 0  i,n     i  i
 C(t) = -----------------------
          __ n                 
         \         B   (t) w   
-        /__ i = 0  i,p     i
+        /__ i = 0  i,n     i
 #+END_EXAMPLE
 
-where p is the order, B_{i,p} are the Bernstein polynomials, P_{i} are control points, and the weight w_{i} of P_{i} is the last ordinate of the homogeneous point P_{i}^{w}. These curves are closed under perspective transformations, and can represent conic sections exactly. 
+or simply (in /LaTeX/)
+
+#+BEGIN_SRC latex
+C(t)=\frac {\sum _{i=0}^{n}{n \choose i}t^{i}(1-t)^{n-i} P_{i} w_{i}}{\sum _{i=0}^{n}{n \choose i}t^{i}(1-t)^{n-i}w_{i}}
+#+END_SRC
+
+i.e., 
+
+#+BEGIN_EXAMPLE
+        __  n                 i       n - i      
+       \         {n choose i}t (1 - t)      P  w 
+       /__  i = 0                            i  i
+C(t) = ------------------------------------------
+          __  n                 i       n - i    
+         \         {n choose i}t (1 - t)     w   
+         /__  i = 0                           i 
+#+END_EXAMPLE
+
+where n is the order, B_{i,n} are the Bernstein polynomials, P_{i} are control points, and the weight w_{i} of P_{i} is the last ordinate of the homogeneous point P_{i}^{w}. These curves are closed under perspective transformations, and can represent conic sections exactly. 
+
+
+
+    
