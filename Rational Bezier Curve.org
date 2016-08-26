@@ -63,7 +63,7 @@ where n is the order, B_{i,n} are the Bernstein polynomials, P_{i} are control p
 
 1. If all w_{i} = 1, then we get the polynomial Bézier curves.
 2. C(0) = P_{0}, C(1) = P_{n} (endpoint interpolation)
-3. C(u) \subseteq [P_{0}, ..., P_{n}] (convex hull property)
+3. C(t) \subseteq [P_{0}, ..., P_{n}] (convex hull property)
 4. The curve is tangent to the control polygon in the endpoints.
 
 ** Properties of the weights:
@@ -79,7 +79,7 @@ where n is the order, B_{i,n} are the Bernstein polynomials, P_{i} are control p
   w      w             
    i + 1  i + 2
    
-  (LaTeX: \frac{w_{i}}{w_{i+1}}:\frac{w_{i+1}}{w_{i+2}}=const)   
+  LaTeX: \frac{w_{i}}{w_{i+1}}:\frac{w_{i+1}}{w_{i+2}} = const
   #+END_EXAMPLE
 
   then the curve has the same shape but another parametrization.
