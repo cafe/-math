@@ -41,7 +41,8 @@ C(t) = -----------------------
 or simply (in /LaTeX/)
 
 #+BEGIN_SRC latex
-C(t)=\frac {\sum _{i=0}^{n}{n \choose i}t^{i}(1-t)^{n-i} P_{i} w_{i}}{\sum _{i=0}^{n}{n \choose i}t^{i}(1-t)^{n-i}w_{i}}
+C(t)=\frac {\sum _{i=0}^{n}{n \choose i}t^{i}(1-t)^{n-i} P_{i} w_{i}}
+{\sum _{i=0}^{n}{n \choose i}t^{i}(1-t)^{n-i}w_{i}}
 #+END_SRC
 
 i.e., 
