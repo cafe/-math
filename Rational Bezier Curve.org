@@ -1,4 +1,6 @@
-* Bezier Curve
+* Bézier Curve
+
+(From [[http://mathworld.wolfram.com/BezierCurve.html][MathWord]])
 
 Given a set of n+1 control points P_{0}, P_{1}, ..., P_{n}, the corresponding Bézier curve (or Bernstein-Bézier curve) is given by
 
@@ -14,3 +16,4 @@ i.e.,
          /__ i = 0  i  i,n   
 #+END_EXAMPLE
 
+where B_{i,n}(t) is a Bernstein polynomial and t in [0,1]. Bézier splines are implemented in the Wolfram Language as BezierCurve[pts]. 
