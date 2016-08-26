@@ -2,18 +2,40 @@
 
 (From [[http://mathworld.wolfram.com/BezierCurve.html][MathWord]])
 
-Given a set of n+1 control points P_{0}, P_{1}, ..., P_{n}, the corresponding Bézier curve (or Bernstein-Bézier curve) is given by
+Given a set of n+1 control points P_{0}, P_{1}, ..., P_{n}, the corresponding Bézier curve (or Bernstein-Bézier curve) is given by (in /LaTeX/)
 
 #+BEGIN_SRC latex
-  C(t)=\sum_{i=0}^n P_i B_{i,n}(t)
+C(t)=\sum_{i=0}^n P_i B_{i,n}(t)
 #+END_SRC
 
 i.e., 
 
 #+BEGIN_EXAMPLE 
-          __ n               
-  C(t) = \         P  B   (t)
-         /__ i = 0  i  i,n   
+        __ n               
+C(t) = \         P  B   (t)
+       /__ i = 0  i  i,n
 #+END_EXAMPLE
 
-where B_{i,n}(t) is a Bernstein polynomial and t in [0,1]. Bézier splines are implemented in the Wolfram Language as BezierCurve[pts]. 
+where B_{i,n}(t) is a Bernstein polynomial and t in [0,1]. Bézier splines are implemented in the Wolfram Language as =BezierCurve[pts]=. 
+
+* Rational Bézier curve
+
+A "rational" Bézier curve is defined by (in /LaTeX/)
+
+#+BEGIN_SRC latex
+C(t)=\frac{\sum_{i=0}^n B_{i,p}(t) w_i P_i}{\sum_{i=0}^n B_{i,p}(t) w_i}
+#+END_SRC
+
+i.e., 
+
+#+BEGIN_EXAMPLE
+        __ n                  
+       \         B   (t) w  P 
+       /__ i = 0  i,p     i  i
+C(t) = -----------------------
+         __ n                 
+        \         B   (t) w   
+        /__ i = 0  i,p     i
+#+END_EXAMPLE
+
+where p is the order, B_{i,p} are the Bernstein polynomials, P_{i} are control points, and the weight w_{i} of P_{i} is the last ordinate of the homogeneous point P_{i}^{w}. These curves are closed under perspective transformations, and can represent conic sections exactly. 
