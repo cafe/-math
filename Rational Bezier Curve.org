@@ -1,0 +1,16 @@
+* Bezier Curve
+
+Given a set of n+1 control points P_{0}, P_{1}, ..., P_{n}, the corresponding Bézier curve (or Bernstein-Bézier curve) is given by
+
+#+BEGIN_SRC latex
+  C(t)=\sum_{i=0}^n P_i B_{i,n}(t)
+#+END_SRC
+
+i.e., 
+
+#+BEGIN_EXAMPLE 
+          __ n               
+  C(t) = \         P  B   (t)
+         /__ i = 0  i  i,n   
+#+END_EXAMPLE
+
