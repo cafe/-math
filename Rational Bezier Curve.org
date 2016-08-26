@@ -20,7 +20,7 @@ where B_{i,n}(t) is a Bernstein polynomial and t in [0,1]. Bézier splines are i
 
 * Rational Bézier curve
 
-A "rational" Bézier curve is defined by (in /LaTeX/)
+Given n + 1 control points P_{i}, the "rational" Bézier curve is defined by (in /LaTeX/)
 
 #+BEGIN_SRC latex
 C(t)=\frac{\sum_{i=0}^n B_{i,n}(t) w_i P_i}{\sum_{i=0}^n B_{i,n}(t) w_i}
