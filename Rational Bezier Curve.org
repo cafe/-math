@@ -20,7 +20,7 @@ where B_{i,n}(t) is a Bernstein polynomial and t in [0,1]. Bézier splines are i
 
 * Rational Bézier curve
 
-Given n + 1 control points P_{i}, the "rational" Bézier curve is defined by (in /LaTeX/)
+Given n + 1 control points P_{i} with w_{0} = w_{n} = 1, the "rational" Bézier curve is defined by (in /LaTeX/)
 
 #+BEGIN_SRC latex
 C(t)=\frac{\sum_{i=0}^n B_{i,n}(t) w_i P_i}{\sum_{i=0}^n B_{i,n}(t) w_i}
@@ -59,6 +59,31 @@ C(t) = ------------------------------------------
 
 where n is the order, B_{i,n} are the Bernstein polynomials, P_{i} are control points, and the weight w_{i} of P_{i} is the last ordinate of the homogeneous point P_{i}^{w}. These curves are closed under perspective transformations, and can represent conic sections exactly. 
 
+** Properties:
 
+1. If all w_{i} = 1, then we get the polynomial Bézier curves.
+2. C(0) = P_{0}, C(1) = P_{n} (endpoint interpolation)
+3. C(u) \subseteq [P_{0}, ..., P_{n}] (convex hull property)
+4. The curve is tangent to the control polygon in the endpoints.
 
-    
+** Properties of the weights:
+
+1. For w_{0} = w_{1} = ... = w_{n} = 1, the rational Bézier curve is equal to a polynomial Bézier curve.
+2. Multiplication of all weights with a common factor does not change the curve.
+3. More generally, if for all ratios
+  
+  #+BEGIN_EXAMPLE
+    w    w             
+     i    i + 1        
+  ------:------ = const
+  w      w             
+   i + 1  i + 2
+   
+  (LaTeX: \frac{w_{i}}{w_{i+1}}:\frac{w_{i+1}}{w_{i+2}}=const)   
+  #+END_EXAMPLE
+
+  then the curve has the same shape but another parametrization.
+
+4. Increasing the weight w_{k} pulls the curve to the control point P_{k}. Decreasing the weight w_{k} pushes the curve away from the control point P_{k}.
+5. In the limit case, when w_{k} approaches infinity, C(t) = P_{k}
+  
