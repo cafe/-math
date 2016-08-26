@@ -57,7 +57,7 @@ C(t) = ------------------------------------------
          /__  i = 0                           i 
 #+END_EXAMPLE
 
-where n is the order, B_{i,n} are the Bernstein polynomials, P_{i} are control points, and the weight w_{i} of P_{i} is the last ordinate of the homogeneous point P_{i}^{w}. These curves are closed under perspective transformations, and can represent conic sections exactly. 
+where n is the order, B_{i,n} are the Bernstein polynomials, P_{i} are control points, and the weight w_{i} (nonnegative values) of P_{i} is the last ordinate of the homogeneous point P_{i}^{w}. These curves are closed under perspective transformations, and can represent conic sections exactly. 
 
 ** Properties:
 
@@ -87,3 +87,6 @@ where n is the order, B_{i,n} are the Bernstein polynomials, P_{i} are control p
 4. Increasing the weight w_{k} pulls the curve to the control point P_{k}. Decreasing the weight w_{k} pushes the curve away from the control point P_{k}.
 5. In the limit case, when w_{k} approaches infinity, C(t) = P_{k}
   
+Effect of the weights (n = 2):
+
+[[./img/RBC_Effect_of_weights.png?raw=true]]
